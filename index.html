@@ -4,7 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>আদিবাসী উন্নয়ন - বাংলাদেশের আদিবাসী সম্প্রদায়কে ক্ষমতায়ন</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SolaimanLipi', 'Siyam Rupali', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: #2E8B57;
+            color: white;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1593115057322-e94b77572f20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #FFD700;
+            color: #333;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #FFC400;
+        }
+
+        .section {
+            padding: 80px 5%;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2E8B57;
+            font-size: 2.2rem;
+        }
+
+        /* Login Section Styles */
+        .login-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'SolaimanLipi', 'Siyam Rupali', Arial, sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #2E8B57;
+            outline: none;
+        }
+
+        /* Admin Panel Styles */
+        .admin-panel {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .volunteer-list {
+            margin-top: 1rem;
+        }
+
+        .volunteer-item {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            border-left: 4px solid #2E8B57;
+        }
+
+        /* Data Collection Styles */
+        .data-collection-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        footer {
+            background: #2E8B57;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,7 +194,7 @@
             <div class="logo">আদিবাসী উন্নয়ন</div>
             <ul class="nav-links">
                 <li><a href="#home">হোম</a></li>
-                <li><a href="career.html">নিয়োগ</a></li>
+                <li><a href="#login">লগইন</a></li>
                 <li><a href="#contact">যোগাযোগ</a></li>
             </ul>
         </nav>
@@ -21,300 +203,294 @@
     <section class="hero" id="home">
         <h1>বাংলাদেশের আদিবাসী সম্প্রদায়কে ক্ষমতায়ন</h1>
         <p>ঐতিহ্য সংরক্ষণ, ভবিষ্যৎ গড়া। বাংলাদেশের আদিবাসী সম্প্রদায়ের জন্য টেকসই উন্নয়ন তৈরি করতে আমাদের সাথে যোগ দিন।</p>
-        <a href="#contact" class="cta-button">সহযোগিতা করুন</a>
+        <a href="#login" class="cta-button">লগইন করুন</a>
     </section>
 
-    <section class="section about" id="about">
-        <h2>আমাদের সম্পর্কে</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>বাংলাদেশের আদিবাসীদের জন্য কাজ</h3>
-                <p>আমরা বাংলাদেশের আদিবাসী সম্প্রদায়ের সামগ্রিক উন্নয়নের জন্য কাজ করি - চাকমা, মারমা, গারো, খাসি, সাঁওতাল, ত্রিপুরা, ওরাওঁ, মনিপুরীসহ সকল আদিবাসী গোষ্ঠীর সমৃদ্ধ সাংস্কৃতিক ঐতিহ্য এবং প্রথাগত জ্ঞান সংরক্ষণের সাথে সাথে।</p>
-                <p>আমাদের কার্যক্রম পার্বত্য চট্টগ্রাম, সিলেট, ময়মনসিংহ, রাজশাহী এবং বাংলাদেশের অন্যান্য অঞ্চলে বিস্তৃত। আমরা আদিবাসী শিশু-কিশোর, নারী ও যুবকদের শিক্ষা, স্বাস্থ্য এবং অর্থনৈতিক ক্ষমতায়নের জন্য কাজ করি।</p>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1593115057322-e94b77572f20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="বাংলাদেশের আদিবাসী সম্প্রদায়">
-            </div>
-        </div>
-    </section>
-
-    <section class="section history" id="history">
-        <h2>আমাদের ইতিহাস</h2>
-        <div class="history-content">
-            <div class="history-text">
-                <h3>২০০৫ সাল থেকে নিরলস কাজ</h3>
-                <p>আদিবাসী উন্নয়ন ২০০৫ সালে বাংলাদেশের পার্বত্য চট্টগ্রাম অঞ্চলে একটি ক্ষুদ্র উদ্যোগ হিসেবে শুরু হয়। সময়ের সাথে সাথে আমরা সম্প্রসারিত হয়ে সমগ্র বাংলাদেশের আদিবাসী সম্প্রদায়ের সাথে কাজ করছি।</p>
-                <div class="milestones">
-                    <div class="milestone">
-                        <span class="year">২০০৫</span>
-                        <span class="event">প্রতিষ্ঠা - রাঙ্গামাটি, পার্বত্য চট্টগ্রাম</span>
-                    </div>
-                    <div class="milestone">
-                        <span class="year">২০১০</span>
-                        <span class="event">সিলেট ও ময়মনসিংহ অঞ্চলে সম্প্রসারণ</span>
-                    </div>
-                    <div class="milestone">
-                        <span class="year">২০১৫</span>
-                        <span class="event">রাজশাহী ও দিনাজপুর অঞ্চলে কার্যক্রম</span>
-                    </div>
-                    <div class="milestone">
-                        <span class="year">২০২৩</span>
-                        <span class="event">১০০+ গ্রামে কার্যক্রম, ৫০০০+ জীবন প্রভাবিত</span>
-                    </div>
+    <!-- Login Section -->
+    <section class="section login-section" id="login">
+        <h2>লগইন করুন</h2>
+        <div class="login-container">
+            <div id="loginForm">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: #2E8B57;">সিস্টেমে প্রবেশ করুন</h3>
+                <div class="form-group">
+                    <label for="loginId">ইউজার আইডি</label>
+                    <input type="text" id="loginId" placeholder="আপনার আইডি লিখুন" required>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section team" id="team">
-        <h2>আমাদের টিম</h2>
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="member-photo">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="সুজিত চাকমা">
-                </div>
-                <h3>সুজিত চাকমা</h3>
-                <p class="position">প্রতিষ্ঠাতা ও নির্বাহী পরিচালক</p>
-                <p class="bio">পার্বত্য চট্টগ্রাম থেকে, ১৫+ বছর আদিবাসী অধিকার কর্মী</p>
-            </div>
-            <div class="team-member">
-                <div class="member-photo">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="মালাবিকা মারমা">
-                </div>
-                <h3>মালাবিকা মারমা</h3>
-                <p class="position">শিক্ষা ও সংস্কৃতি কর্মসূচি সমন্বয়কারী</p>
-                <p class="bio">বান্দরবান থেকে, মারমা ভাষা ও সংস্কৃতি বিশেষজ্ঞ</p>
-            </div>
-            <div class="team-member">
-                <div class="member-photo">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="দিপেন্দ্র গারো">
-                </div>
-                <h3>দিপেন্দ্র গারো</h3>
-                <p class="position">স্বাস্থ্য ও জীবিকা কর্মসূচি ব্যবস্থাপক</p>
-                <p class="bio">ময়মনসিংহ থেকে, সম্প্রদায়ভিত্তিক উন্নয়ন বিশেষজ্ঞ</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="programs">
-        <h2>আমাদের কার্যক্রম</h2>
-        <div class="programs-grid">
-            <div class="program-card">
-                <div class="program-image">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="শিক্ষা কার্যক্রম">
-                </div>
-                <h3>শিক্ষা কার্যক্রম</h3>
-                <p>আদিবাসী ভাষায় শিক্ষা (চাকমা, মারমা, গারো), বৃত্তিমূলক প্রশিক্ষণ, ডিজিটাল সাক্ষরতা, স্কলারশিপ কর্মসূচি, মাদ্রাসা শিক্ষার বিকল্প</p>
-            </div>
-            <div class="program-card">
-                <div class="program-image">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="স্বাস্থ্য সেবা">
-                </div>
-                <h3>স্বাস্থ্য সেবা</h3>
-                <p>মোবাইল মেডিকেল ক্যাম্প, প্রসূতি সেবা, Traditional healing সংরক্ষণ, স্বাস্থ্য সচেতনতা, পুষ্টি কর্মসূচি</p>
-            </div>
-            <div class="program-card">
-                <div class="program-image">
-                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="জীবিকা উন্নয়ন">
-                </div>
-                <h3>জীবিকা উন্নয়ন</h3>
-                <p>জৈব কৃষি প্রশিক্ষণ, হস্তশিল্প বিপণন, ক্ষুদ্রঋণ কর্মসূচি, পর্যটন উদ্যোগ, আদিবাসী পণ্য বিপণন</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section gallery-section" id="gallery">
-        <h2>আমাদের গ্যালারি</h2>
-        <div class="gallery-container">
-            <div class="gallery-category">
-                <h3>বাংলাদেশের আদিবাসী সম্প্রদায়</h3>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1593115057322-e94b77572f20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="চাকমা সম্প্রদায়">
-                        <div class="gallery-caption">চাকমা সম্প্রদায় - রাঙ্গামাটি, পার্বত্য চট্টগ্রাম</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1551650976-3de3cd5d53c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="মারমা সম্প্রদায়">
-                        <div class="gallery-caption">মারমা সম্প্রদায় - বান্দরবান, পার্বত্য চট্টগ্রাম</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="গারো সম্প্রদায়">
-                        <div class="gallery-caption">গারো সম্প্রদায় - ময়মনসিংহ বিভাগ</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery-category">
-                <h3>আমাদের কার্যক্রম</h3>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="শিক্ষা কার্যক্রম">
-                        <div class="gallery-caption">আদিবাসী শিশু শিক্ষা কার্যক্রম - রাঙ্গামাটি</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="স্বাস্থ্য শিবির">
-                        <div class="gallery-caption">গ্রামীণ স্বাস্থ্য শিবির - বান্দরবান</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="সাংস্কৃতিক অনুষ্ঠান">
-                        <div class="gallery-caption">আদিবাসী সাংস্কৃতিক উৎসব - ময়মনসিংহ</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section stories" id="stories">
-        <h2>সাফল্যের গল্প</h2>
-        <div class="stories-grid">
-            <div class="story-card">
-                <div class="story-image">
-                    <img src="https://images.unsplash.com/photo-1541336032412-2048a678540d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="কল্পনা চাকমা">
-                </div>
-                <h3>কল্পনা চাকমা</h3>
-                <p class="location">রাঙ্গামাটি, পার্বত্য চট্টগ্রাম</p>
-                <p>"আদিবাসী উন্নয়নের হস্তশিল্প প্রশিক্ষণের মাধ্যমে আমি এখন আমার ঐতিহ্যবাহী বুনন শিল্পকে আধুনিক বাজারে নিয়ে এসেছি। আমার তৈরি পণ্য এখন ঢাকার দামী দোকানেও বিক্রি হয়।"</p>
-            </div>
-            <div class="story-card">
-                <div class="story-image">
-                    <img src="https://images.unsplash.com/photo-1559027615-cfa462912979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="আনোয়ার মারমা">
-                </div>
-                <h3>আনোয়ার মারমা</h3>
-                <p class="location">বান্দরবান, পার্বত্য চট্টগ্রাম</p>
-                <p>"আমাদের গ্রামে প্রথমবারের মতো কম্পিউটার লার্নিং সেন্টার প্রতিষ্ঠিত হয়েছে। আমাদের যুবকেরা এখন ডিজিটাল literacy শিখছে এবং online কাজের সুযোগ পাচ্ছে।"</p>
-            </div>
-            <div class="story-card">
-                <div class="story-image">
-                    <img src="https://images.unsplash.com/photo-1584467735871-8db9ac8d0e92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="সুমিতা সাঁওতাল">
-                </div>
-                <h3>সুমিতা সাঁওতাল</h3>
-                <p class="location">রাজশাহী বিভাগ</p>
-                <p>"আমাদের women's collective farming এর মাধ্যমে আমরা organic vegetable production ৪০% বৃদ্ধি করতে পেরেছি। এখন আমরা স্থানীয় market এ আমাদের product সরবরাহ করছি।"</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Career Section -->
-    <section class="section career" id="career">
-        <h2>ক্যারিয়ার অপারচুনিটি</h2>
-        <div class="career-container">
-            <div class="career-info">
-                <h3>আমাদের সাথে কাজ করুন</h3>
-                <p>আদিবাসী উন্নয়নে আপনার দক্ষতা কাজে লাগান। শিক্ষা, স্বাস্থ্য, কৃষি, প্রযুক্তি - যে কোন ক্ষেত্রে আপনার অভিজ্ঞতা আমাদের সাথে share করুন।</p>
                 
-                <div class="benefits">
-                    <h4>আমাদের সুবিধাসমূহ:</h4>
-                    <ul>
-                        <li>✔️ Competitive salary</li>
-                        <li>✔️ Flexible working hours</li>
-                        <li>✔️ Training and development</li>
-                        <li>✔️ Work with diverse communities</li>
-                        <li>✔️ Make real impact</li>
-                    </ul>
+                <div class="form-group">
+                    <label for="loginPassword">পাসওয়ার্ড</label>
+                    <input type="password" id="loginPassword" placeholder="আপনার পাসওয়ার্ড লিখুন" required>
+                </div>
+                
+                <button type="button" onclick="loginUser()" class="cta-button" style="width: 100%;">লগইন করুন</button>
+                
+                <div id="loginMessage" style="margin-top: 1rem;"></div>
+
+                <!-- Admin Panel (Only for main admin) -->
+                <div id="adminPanel" class="admin-panel hidden">
+                    <h4>এডমিন প্যানেল - নতুন ভোলান্টিয়ার যোগ করুন</h4>
+                    <div class="form-group">
+                        <input type="text" id="newVolunteerId" placeholder="নতুন আইডি">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="newVolunteerPassword" placeholder="নতুন পাসওয়ার্ড">
+                    </div>
+                    <button type="button" onclick="addVolunteer()" class="cta-button">ভোলান্টিয়ার যোগ করুন</button>
+                    
+                    <div class="volunteer-list">
+                        <h5>বর্তমান ভোলান্টিয়ার তালিকা:</h5>
+                        <div id="volunteerList"></div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="career-form">
-                <h3>ক্যারিয়ার ফর্ম জমা দিন</h3>
-                <form id="careerForm" action="https://script.google.com/macros/s/AKfycbw0vdfyRf8yBrGfG52Qz4yB2gyObK1HoUB0J44uLnCx_aTqyxyibHv12YIM2AENpQVm-g/exec" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="আপনার সম্পূর্ণ নাম" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="ইমেইল ঠিকানা" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="tel" name="phone" placeholder="ফোন নম্বর" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea name="address" placeholder="বর্তমান ঠিকানা" rows="3" required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <select name="workArea" required>
-                            <option value="">কাজের এলাকা নির্বাচন করুন</option>
-                            <option value="education">শিক্ষা</option>
-                            <option value="healthcare">স্বাস্থ্য সেবা</option>
-                            <option value="agriculture">কৃষি</option>
-                            <option value="handicraft">হস্তশিল্প</option>
-                            <option value="technology">প্রযুক্তি</option>
-                            <option value="administration">প্রশাসন</option>
-                            <option value="other">অন্যান্য</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <select name="experience" required>
-                            <option value="">অভিজ্ঞতা নির্বাচন করুন</option>
-                            <option value="fresher">ফ্রেশার (০-১ বছর)</option>
-                            <option value="1-3">১-৩ বছর</option>
-                            <option value="3-5">৩-৫ বছর</option>
-                            <option value="5+">৫+ বছর</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea name="message" placeholder="আপনার দক্ষতা এবং কেন কাজ করতে চান..." rows="4"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="cta-button">আবেদন জমা দিন</button>
-                </form>
+
+            <!-- Data Collection Form (Hidden initially) -->
+            <div id="dataCollectionSection" class="hidden">
+                <div class="data-collection-form">
+                    <h3 style="text-align: center; margin-bottom: 2rem; color: #2E8B57;">ফিল্ড ডাটা কালেকশন</h3>
+                    <form id="dataCollectionForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">নাম *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fatherName">বাবার নাম *</label>
+                                <input type="text" id="fatherName" name="fatherName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="motherName">মায়ের নাম *</label>
+                                <input type="text" id="motherName" name="motherName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">ফোন নম্বর *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="union">ইউনিয়ন *</label>
+                                <input type="text" id="union" name="union" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="thana">থানা *</label>
+                                <input type="text" id="thana" name="thana" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="zila">জেলা *</label>
+                                <input type="text" id="zila" name="zila" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pesa">পেশা *</label>
+                                <input type="text" id="pesa" name="pesa" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="gobadiPosu">নিজস্ব গবাদি পশু আছে কিনা? *</label>
+                                <select id="gobadiPosu" name="gobadiPosu" required>
+                                    <option value="">নির্বাচন করুন</option>
+                                    <option value="yes">হ্যাঁ</option>
+                                    <option value="no">না</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="income">মাসিক আয় (আনুমানিক) *</label>
+                                <input type="text" id="income" name="income" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="age">বয়স *</label>
+                                <input type="number" id="age" name="age" required onchange="toggleFields()">
+                            </div>
+                            <div class="form-group" id="sontanField">
+                                <label for="sontan">পরিবারের কততম সন্তান?</label>
+                                <input type="number" id="sontan" name="sontan">
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="familyMembers">পরিবারে কে কে আছে *</label>
+                            <textarea id="familyMembers" name="familyMembers" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group full-width" id="abroadField">
+                            <label for="abroad">দেশের বাইরে যেতে ইচ্ছুক কিনা?</label>
+                            <select id="abroad" name="abroad">
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="yes">হ্যাঁ</option>
+                                <option value="no">না</option>
+                            </select>
+                        </div>
+
+                        <button type="button" onclick="submitData()" class="cta-button" style="width: 100%;">ডাটা সাবমিট করুন</button>
+                    </form>
+                    <div id="dataMessage" style="margin-top: 1rem;"></div>
+                </div>
             </div>
         </div>
     </section>
 
     <footer id="contact">
         <div class="section">
-            <h3>যোগাযোগ করুন</h3>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h4>আমাদের ঠিকানা</h4>
-                    <p>📧 ইমেইল: contact@adivasidevelopment.org</p>
-                    <p>📞 ফোন: +৮৮ ০১৭১২ ৩৪৫৬৭৮</p>
-                    <p>📍 ঠিকানা: ১২/৩, লেক সার্কাস, কলাবাগান, ঢাকা-১২০৫</p>
-                    
-                    <div class="social-links">
-                        <h4>সামাজিক যোগাযোগ</h4>
-                        <div class="social-icons">
-                            <a href="#">📘 ফেসবুক</a>
-                            <a href="#">📷 ইন্সটাগ্রাম</a>
-                            <a href="#">🎥 ইউটিউব</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <h4>আমাদের সাথে যোগাযোগ করুন</h4>
-                    <form id="contactForm">
-                        <input type="text" placeholder="আপনার নাম" required>
-                        <input type="email" placeholder="ইমেইল ঠিকানা" required>
-                        <input type="tel" placeholder="ফোন নম্বর">
-                        <select required>
-                            <option value="">বিষয় নির্বাচন করুন</option>
-                            <option value="volunteer">ভোলান্টিয়ার হতে চাই</option>
-                            <option value="donation">অনুদান দিতে চাই</option>
-                            <option value="information">তথ্য চাই</option>
-                            <option value="collaboration">সহযোগিতা করতে চাই</option>
-                            <option value="other">অন্যান্য</option>
-                        </select>
-                        <textarea placeholder="আপনার বার্তা" rows="5" required></textarea>
-                        <button type="submit" class="cta-button">বার্তা পাঠান</button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="volunteer-cta">
-                <h4>ভোলান্টিয়ার হোন</h4>
-                <p>আমাদের সাথে ভোলান্টিয়ার হিসেবে যোগ দিন এবং বাংলাদেশের আদিবাসী সম্প্রদায়ের উন্নয়নে অবদান রাখুন। শিক্ষা, স্বাস্থ্য, কৃষি, বা প্রযুক্তি - আপনার দক্ষতা অনুযায়ী কাজ করুন।</p>
-                <a href="#contact" class="cta-button secondary">ভোলান্টিয়ার আবেদন</a>
-            </div>
+            <h3>যোগাযোগ</h3>
+            <p>📧 ইমেইল: contact@adivasidevelopment.org</p>
+            <p>📞 ফোন: +৮৮ ০১৭১২ ৩৪৫৬৭৮</p>
+            <p>📍 ঠিকানা: ১২/৩, লেক সার্কাস, কলাবাগান, ঢাকা-১২০৫</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Initialize volunteers in localStorage
+        function initializeVolunteers() {
+            if (!localStorage.getItem('volunteers')) {
+                const defaultVolunteers = [
+                    { id: 'MdEbadot', password: 'MdEbadot12', isAdmin: true }
+                ];
+                localStorage.setItem('volunteers', JSON.stringify(defaultVolunteers));
+            }
+        }
+
+        // Login function
+        function loginUser() {
+            const loginId = document.getElementById('loginId').value;
+            const loginPassword = document.getElementById('loginPassword').value;
+            const volunteers = JSON.parse(localStorage.getItem('volunteers') || '[]');
+            
+            const volunteer = volunteers.find(v => v.id === loginId && v.password === loginPassword);
+            
+            if (volunteer) {
+                document.getElementById('loginForm').classList.add('hidden');
+                document.getElementById('dataCollectionSection').classList.remove('hidden');
+                
+                // Show admin panel only for main admin
+                if (volunteer.isAdmin) {
+                    document.getElementById('adminPanel').classList.remove('hidden');
+                    loadVolunteerList();
+                }
+                
+                document.getElementById('loginMessage').innerHTML = 
+                    '<div class="success-message">লগইন সফল! ডাটা কালেকশন ফর্ম এখন উপলব্ধ।</div>';
+            } else {
+                document.getElementById('loginMessage').innerHTML = 
+                    '<div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 5px;">ভুল আইডি বা পাসওয়ার্ড!</div>';
+            }
+        }
+
+        // Add new volunteer
+        function addVolunteer() {
+            const newId = document.getElementById('newVolunteerId').value;
+            const newPassword = document.getElementById('newVolunteerPassword').value;
+            
+            if (!newId || !newPassword) {
+                alert('আইডি এবং পাসওয়ার্ড প্রয়োজন!');
+                return;
+            }
+            
+            const volunteers = JSON.parse(localStorage.getItem('volunteers') || '[]');
+            
+            // Check if ID already exists
+            if (volunteers.find(v => v.id === newId)) {
+                alert('এই আইডি ইতিমধ্যেই存在!');
+                return;
+            }
+            
+            volunteers.push({ id: newId, password: newPassword, isAdmin: false });
+            localStorage.setItem('volunteers', JSON.stringify(volunteers));
+            
+            document.getElementById('newVolunteerId').value = '';
+            document.getElementById('newVolunteerPassword').value = '';
+            loadVolunteerList();
+            
+            alert('ভোলান্টিয়ার সফলভাবে যোগ করা হয়েছে!');
+        }
+
+        // Load volunteer list
+        function loadVolunteerList() {
+            const volunteers = JSON.parse(localStorage.getItem('volunteers') || '[]');
+            const volunteerList = document.getElementById('volunteerList');
+            
+            volunteerList.innerHTML = volunteers
+                .filter(v => !v.isAdmin)
+                .map(v => `
+                    <div class="volunteer-item">
+                        <strong>আইডি:</strong> ${v.id} | <strong>পাসওয়ার্ড:</strong> ${v.password}
+                    </div>
+                `).join('');
+        }
+
+        // Toggle fields based on age
+        function toggleFields() {
+            const age = parseInt(document.getElementById('age').value) || 0;
+            const sontanField = document.getElementById('sontanField');
+            const abroadField = document.getElementById('abroadField');
+            
+            if (age > 30) {
+                sontanField.style.display = 'none';
+                document.getElementById('sontan').value = '';
+            } else {
+                sontanField.style.display = 'block';
+            }
+            
+            if (age > 35) {
+                abroadField.style.display = 'none';
+                document.getElementById('abroad').value = '';
+            } else {
+                abroadField.style.display = 'block';
+            }
+        }
+
+        // Submit data
+        function submitData() {
+            const formData = {
+                name: document.getElementById('name').value,
+                fatherName: document.getElementById('fatherName').value,
+                motherName: document.getElementById('motherName').value,
+                phone: document.getElementById('phone').value,
+                union: document.getElementById('union').value,
+                thana: document.getElementById('thana').value,
+                zila: document.getElementById('zila').value,
+                pesa: document.getElementById('pesa').value,
+                gobadiPosu: document.getElementById('gobadiPosu').value,
+                income: document.getElementById('income').value,
+                age: document.getElementById('age').value,
+                familyMembers: document.getElementById('familyMembers').value,
+                sontan: document.getElementById('sontan').value,
+                abroad: document.getElementById('abroad').value,
+                submittedAt: new Date().toLocaleString()
+            };
+            
+            // Save to localStorage
+            const allData = JSON.parse(localStorage.getItem('collectedData') || '[]');
+            allData.push(formData);
+            localStorage.setItem('collectedData', JSON.stringify(allData));
+            
+            // Show success message
+            document.getElementById('dataMessage').innerHTML = 
+                '<div class="success-message">ডাটা সফলভাবে সাবমিট করা হয়েছে!</div>';
+            
+            // Reset form
+            document.getElementById('dataCollectionForm').reset();
+            
+            // Hide conditional fields
+            toggleFields();
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeVolunteers();
+            toggleFields(); // Set initial field states
+        });
+    </script>
 </body>
 </html>
