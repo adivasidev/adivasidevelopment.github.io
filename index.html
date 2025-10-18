@@ -89,6 +89,46 @@
             font-size: 2.2rem;
         }
 
+        /* Existing Sections Styles */
+        .about-content, .history-content, .team-grid, .programs-grid, .gallery-grid, .stories-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .team-grid, .programs-grid, .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member, .program-card, .story-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .member-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
         /* Login Section Styles */
         .login-container {
             max-width: 500px;
@@ -186,6 +226,25 @@
             margin-bottom: 1rem;
             border: 1px solid #c3e6cb;
         }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logout-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background: #c82333;
+        }
     </style>
 </head>
 <body>
@@ -194,8 +253,16 @@
             <div class="logo">আদিবাসী উন্নয়ন</div>
             <ul class="nav-links">
                 <li><a href="#home">হোম</a></li>
-                <li><a href="#login">লগইন</a></li>
-                <li><a href="#contact">যোগাযোগ</a></li>
+                <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                <li><a href="#history">ইতিহাস</a></li>
+                <li><a href="#programs">কার্যক্রম</a></li>
+                <li id="loginNavItem"><a href="#login">লগইন</a></li>
+                <li id="userNavItem" class="hidden">
+                    <div class="user-menu">
+                        <span id="userName"></span>
+                        <button class="logout-btn" onclick="logout()">লগআউট</button>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -204,6 +271,49 @@
         <h1>বাংলাদেশের আদিবাসী সম্প্রদায়কে ক্ষমতায়ন</h1>
         <p>ঐতিহ্য সংরক্ষণ, ভবিষ্যৎ গড়া। বাংলাদেশের আদিবাসী সম্প্রদায়ের জন্য টেকসই উন্নয়ন তৈরি করতে আমাদের সাথে যোগ দিন।</p>
         <a href="#login" class="cta-button">লগইন করুন</a>
+    </section>
+
+    <!-- Existing Sections (Same as before) -->
+    <section class="section about" id="about">
+        <h2>আমাদের সম্পর্কে</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>বাংলাদেশের আদিবাসীদের জন্য কাজ</h3>
+                <p>আমরা বাংলাদেশের আদিবাসী সম্প্রদায়ের সামগ্রিক উন্নয়নের জন্য কাজ করি - চাকমা, মারমা, গারো, খাসি, সাঁওতাল, ত্রিপুরা, ওরাওঁ, মনিপুরীসহ সকল আদিবাসী গোষ্ঠীর সমৃদ্ধ সাংস্কৃতিক ঐতিহ্য এবং প্রথাগত জ্ঞান সংরক্ষণের সাথে সাথে।</p>
+                <p>আমাদের কার্যক্রম পার্বত্য চট্টগ্রাম, সিলেট, ময়মনসিংহ, রাজশাহী এবং বাংলাদেশের অন্যান্য অঞ্চলে বিস্তৃত। আমরা আদিবাসী শিশু-কিশোর, নারী ও যুবকদের শিক্ষা, স্বাস্থ্য এবং অর্থনৈতিক ক্ষমতায়নের জন্য কাজ করি।</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1593115057322-e94b77572f20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="বাংলাদেশের আদিবাসী সম্প্রদায়">
+            </div>
+        </div>
+    </section>
+
+    <section class="section history" id="history">
+        <h2>আমাদের ইতিহাস</h2>
+        <div class="history-content">
+            <div class="history-text">
+                <h3>২০০৫ সাল থেকে নিরলস কাজ</h3>
+                <p>আদিবাসী উন্নয়ন ২০০৫ সালে বাংলাদেশের পার্বত্য চট্টগ্রাম অঞ্চলে একটি ক্ষুদ্র উদ্যোগ হিসেবে শুরু হয়। সময়ের সাথে সাথে আমরা সম্প্রসারিত হয়ে সমগ্র বাংলাদেশের আদিবাসী সম্প্রদায়ের সাথে কাজ করছি।</p>
+                <div class="milestones">
+                    <div class="milestone">
+                        <span class="year">২০০৫</span>
+                        <span class="event">প্রতিষ্ঠা - রাঙ্গামাটি, পার্বত্য চট্টগ্রাম</span>
+                    </div>
+                    <div class="milestone">
+                        <span class="year">২০১০</span>
+                        <span class="event">সিলেট ও ময়মনসিংহ অঞ্চলে সম্প্রসারণ</span>
+                    </div>
+                    <div class="milestone">
+                        <span class="year">২০১৫</span>
+                        <span class="event">রাজশাহী ও দিনাজপুর অঞ্চলে কার্যক্রম</span>
+                    </div>
+                    <div class="milestone">
+                        <span class="year">২০২৩</span>
+                        <span class="event">১০০+ গ্রামে কার্যক্রম, ৫০০০+ জীবন প্রভাবিত</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Login Section -->
@@ -341,6 +451,37 @@
         </div>
     </section>
 
+    <!-- Other existing sections -->
+    <section class="section team" id="team">
+        <h2>আমাদের টিম</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="সুজিত চাকমা">
+                </div>
+                <h3>সুজিত চাকমা</h3>
+                <p class="position">প্রতিষ্ঠাতা ও নির্বাহী পরিচালক</p>
+                <p class="bio">পার্বত্য চট্টগ্রাম থেকে, ১৫+ বছর আদিবাসী অধিকার কর্মী</p>
+            </div>
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="মালাবিকা মারমা">
+                </div>
+                <h3>মালাবিকা মারমা</h3>
+                <p class="position">শিক্ষা ও সংস্কৃতি কর্মসূচি সমন্বয়কারী</p>
+                <p class="bio">বান্দরবান থেকে, মারমা ভাষা ও সংস্কৃতি বিশেষজ্ঞ</p>
+            </div>
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="দিপেন্দ্র গারো">
+                </div>
+                <h3>দিপেন্দ্র গারো</h3>
+                <p class="position">স্বাস্থ্য ও জীবিকা কর্মসূচি ব্যবস্থাপক</p>
+                <p class="bio">ময়মনসিংহ থেকে, সম্প্রদায়ভিত্তিক উন্নয়ন বিশেষজ্ঞ</p>
+            </div>
+        </div>
+    </section>
+
     <footer id="contact">
         <div class="section">
             <h3>যোগাযোগ</h3>
@@ -351,6 +492,16 @@
     </footer>
 
     <script>
+        // Check if user is logged in on page load
+        function checkLoginStatus() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                showUserMenu(user.id);
+                showDataCollection();
+            }
+        }
+
         // Initialize volunteers in localStorage
         function initializeVolunteers() {
             if (!localStorage.getItem('volunteers')) {
@@ -370,14 +521,11 @@
             const volunteer = volunteers.find(v => v.id === loginId && v.password === loginPassword);
             
             if (volunteer) {
-                document.getElementById('loginForm').classList.add('hidden');
-                document.getElementById('dataCollectionSection').classList.remove('hidden');
+                // Save current user
+                localStorage.setItem('currentUser', JSON.stringify(volunteer));
                 
-                // Show admin panel only for main admin
-                if (volunteer.isAdmin) {
-                    document.getElementById('adminPanel').classList.remove('hidden');
-                    loadVolunteerList();
-                }
+                showUserMenu(volunteer.id);
+                showDataCollection();
                 
                 document.getElementById('loginMessage').innerHTML = 
                     '<div class="success-message">লগইন সফল! ডাটা কালেকশন ফর্ম এখন উপলব্ধ।</div>';
@@ -385,6 +533,37 @@
                 document.getElementById('loginMessage').innerHTML = 
                     '<div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 5px;">ভুল আইডি বা পাসওয়ার্ড!</div>';
             }
+        }
+
+        // Show user menu and hide login
+        function showUserMenu(userId) {
+            document.getElementById('loginNavItem').classList.add('hidden');
+            document.getElementById('userNavItem').classList.remove('hidden');
+            document.getElementById('userName').textContent = userId;
+        }
+
+        // Show data collection section
+        function showDataCollection() {
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('dataCollectionSection').classList.remove('hidden');
+            
+            const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+            if (currentUser.isAdmin) {
+                document.getElementById('adminPanel').classList.remove('hidden');
+                loadVolunteerList();
+            }
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('currentUser');
+            document.getElementById('userNavItem').classList.add('hidden');
+            document.getElementById('loginNavItem').classList.remove('hidden');
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('dataCollectionSection').classList.add('hidden');
+            document.getElementById('adminPanel').classList.add('hidden');
+            document.getElementById('loginForm').reset();
+            document.getElementById('loginMessage').innerHTML = '';
         }
 
         // Add new volunteer
@@ -467,6 +646,7 @@
                 familyMembers: document.getElementById('familyMembers').value,
                 sontan: document.getElementById('sontan').value,
                 abroad: document.getElementById('abroad').value,
+                submittedBy: JSON.parse(localStorage.getItem('currentUser')).id,
                 submittedAt: new Date().toLocaleString()
             };
             
@@ -489,6 +669,7 @@
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             initializeVolunteers();
+            checkLoginStatus();
             toggleFields(); // Set initial field states
         });
     </script>
