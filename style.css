@@ -476,42 +476,82 @@ footer p {
     background: #2E7D32;
     color: white;
 }
-/* Career Page Styles */
+/* Career Page Professional Styles */
 .career-hero {
-    background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(56, 142, 60, 0.9));
-    padding: 150px 20px 80px;
+    background: linear-gradient(135deg, #2E7D32 0%, #388E3C 100%);
+    padding: 120px 20px 60px;
     margin-top: 60px;
     text-align: center;
     color: white;
 }
 
-.career-page {
-    background: #f8f9fa;
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
 }
 
-.career-container {
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.career-page {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+.container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-.career-intro {
+.form-header {
     text-align: center;
     margin-bottom: 3rem;
 }
 
-.career-intro h2 {
+.form-header h2 {
     color: #2E7D32;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
 }
 
-.career-form-section {
+.form-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.application-form {
     background: white;
     padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    margin-bottom: 3rem;
 }
 
-.form-grid {
+.form-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.section-title {
+    color: #2E7D32;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #FFD54F;
+    display: inline-block;
+}
+
+.form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
@@ -524,46 +564,129 @@ footer p {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #2E7D32;
-    font-weight: bold;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.required {
+    color: #e74c3c;
+}
+
+.form-control {
     width: 100%;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
     font-size: 1rem;
     font-family: 'SolaimanLipi', 'Kalpurush', sans-serif;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.form-control:focus {
     outline: none;
     border-color: #2E7D32;
-    box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
 }
 
-.form-group.full-width {
-    grid-column: 1 / -1;
+.form-control:hover {
+    border-color: #bdc3c7;
 }
 
-.form-group textarea {
+textarea.form-control {
     resize: vertical;
-    min-height: 80px;
+    min-height: 100px;
 }
 
-/* Responsive */
+select.form-control {
+    cursor: pointer;
+}
+
+/* Submit Button */
+.form-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2E7D32 0%, #388E3C 100%);
+    color: white;
+    border: none;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Loading State */
+.btn-primary.loading .btn-text {
+    display: none;
+}
+
+.btn-primary.loading .btn-loading {
+    display: inline-block !important;
+}
+
+/* Success Message */
+.form-success {
+    background: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 1rem;
+    border: 1px solid #c3e6cb;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .form-grid {
+    .form-row {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
-    .career-form-section {
+    .application-form {
         padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .application-form {
+        padding: 1.5rem;
+    }
+    
+    .form-section {
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .btn-primary {
+        padding: 1rem 2rem;
+        width: 100%;
     }
 }
