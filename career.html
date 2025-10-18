@@ -22,76 +22,81 @@
     </header>
 
     <section class="hero career-hero">
-        <h1>চাকুরির আবেদন</h1>
-        <p>আদিবাসী উন্নয়ন সংস্থায় আপনার ক্যারিয়ার শুরু করুন</p>
+        <div class="hero-content">
+            <h1>চাকুরির আবেদন ফর্ম</h1>
+            <p>আদিবাসী উন্নয়ন সংস্থায় ক্যারিয়ার গড়ুন</p>
+        </div>
     </section>
 
     <section class="section career-page">
-        <div class="career-container">
-            <div class="career-intro">
+        <div class="container">
+            <div class="form-header">
                 <h2>আবেদন ফর্ম</h2>
-                <p>নিচের ফর্মটি পূরণ করে আমাদের সাথে যুক্ত হোন</p>
+                <p>নিচের ফর্মটি সঠিকভাবে পূরণ করুন</p>
             </div>
 
-            <!-- Application Form -->
-            <div class="career-form-section">
+            <div class="application-form">
                 <form id="careerForm" action="https://script.google.com/macros/s/AKfycbw0vdfyRf8yBrGfG52Qz4yB2gyObK1HoUB0J44uLnCx_aTqyxyibHv12YIM2AENpQVm-g/exec" method="POST">
-                    <div class="form-grid">
-                        <!-- নাম -->
-                        <div class="form-group">
-                            <label for="name">পুরো নাম *</label>
-                            <input type="text" id="name" name="name" placeholder="আপনার সম্পূর্ণ নাম" required>
+                    
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3 class="section-title">ব্যক্তিগত তথ্য</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">পুরো নাম <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="আপনার সম্পূর্ণ নাম" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">মোবাইল নম্বর <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="01XXXXXXXXX" required>
+                            </div>
                         </div>
-                        
-                        <!-- ঠিকানা -->
+
                         <div class="form-group">
-                            <label for="address">বর্তমান ঠিকানা *</label>
-                            <textarea id="address" name="address" rows="3" placeholder="আপনার সম্পূর্ণ ঠিকানা" required></textarea>
+                            <label for="email">ইমেইল ঠিকানা <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="yourname@email.com" required>
                         </div>
-                        
-                        <!-- ইমেইল -->
+
                         <div class="form-group">
-                            <label for="email">ইমেইল ঠিকানা *</label>
-                            <input type="email" id="email" name="email" placeholder="yourname@email.com" required>
+                            <label for="address">বর্তমান ঠিকানা <span class="required">*</span></label>
+                            <textarea id="address" name="address" class="form-control" rows="3" placeholder="গ্রাম, ডাকঘর, উপজেলা, জেলা" required></textarea>
                         </div>
-                        
-                        <!-- ফোন নম্বর -->
+                    </div>
+
+                    <!-- Educational & Professional Information -->
+                    <div class="form-section">
+                        <h3 class="section-title">শিক্ষাগত ও পেশাগত তথ্য</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="education">শিক্ষাগত যোগ্যতা <span class="required">*</span></label>
+                                <select id="education" name="education" class="form-control" required>
+                                    <option value="">নির্বাচন করুন</option>
+                                    <option value="এসএসসি">এসএসসি</option>
+                                    <option value="এইচএসসি">এইচএসসি</option>
+                                    <option value="স্নাতক">স্নাতক</option>
+                                    <option value="স্নাতকোত্তর">স্নাতকোত্তর</option>
+                                    <option value="অন্যান্য">অন্যান্য</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="experience">কাজের অভিজ্ঞতা <span class="required">*</span></label>
+                                <select id="experience" name="experience" class="form-control" required>
+                                    <option value="">নির্বাচন করুন</option>
+                                    <option value="ফ্রেশার">ফ্রেশার</option>
+                                    <option value="১ বছরের কম">১ বছরের কম</option>
+                                    <option value="১-২ বছর">১-২ বছর</option>
+                                    <option value="২-৫ বছর">২-৫ বছর</option>
+                                    <option value="৫+ বছর">৫+ বছর</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="form-group">
-                            <label for="phone">ফোন নম্বর *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="01XXXXXXXXX" required>
-                        </div>
-                        
-                        <!-- শিক্ষাগত যোগ্যতা -->
-                        <div class="form-group">
-                            <label for="education">শিক্ষাগত যোগ্যতা *</label>
-                            <select id="education" name="education" required>
-                                <option value="">নির্বাচন করুন</option>
-                                <option value="এসএসসি">এসএসসি</option>
-                                <option value="এইচএসসি">এইচএসসি</option>
-                                <option value="স্নাতক">স্নাতক</option>
-                                <option value="স্নাতকোত্তর">স্নাতকোত্তর</option>
-                                <option value="অন্যান্য">অন্যান্য</option>
-                            </select>
-                        </div>
-                        
-                        <!-- অভিজ্ঞতা -->
-                        <div class="form-group">
-                            <label for="experience">অভিজ্ঞতা *</label>
-                            <select id="experience" name="experience" required>
-                                <option value="">নির্বাচন করুন</option>
-                                <option value="ফ্রেশার">ফ্রেশার (কোন অভিজ্ঞতা নেই)</option>
-                                <option value="১ বছরের কম">১ বছরের কম</option>
-                                <option value="১-২ বছর">১-২ বছর</option>
-                                <option value="২-৫ বছর">২-৫ বছর</option>
-                                <option value="৫+ বছর">৫+ বছর</option>
-                            </select>
-                        </div>
-                        
-                        <!-- পদ -->
-                        <div class="form-group full-width">
-                            <label for="position">কোন পদের জন্য আবেদন করছেন? *</label>
-                            <select id="position" name="position" required>
-                                <option value="">পদ নির্বাচন করুন</option>
+                            <label for="position">পদবী নির্বাচন <span class="required">*</span></label>
+                            <select id="position" name="position" class="form-control" required>
+                                <option value="">পদবী নির্বাচন করুন</option>
                                 <option value="এলাকা ইনচার্জ">এলাকা ইনচার্জ</option>
                                 <option value="ফিল্ড অফিসার">ফিল্ড অফিসার</option>
                                 <option value="প্রকল্প সমন্বয়কারী">প্রকল্প সমন্বয়কারী</option>
@@ -101,8 +106,14 @@
                             </select>
                         </div>
                     </div>
-                    
-                    <button type="submit" class="cta-button">আবেদন জমা দিন</button>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <span class="btn-text">আবেদন জমা দিন</span>
+                            <span class="btn-loading" style="display: none;">জমা হচ্ছে...</span>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -110,7 +121,7 @@
 
     <footer>
         <div class="section">
-            <p>ইমেইল: career@adivasidevelopment.org | ফোন: +৮৮ ০১৭১২ ৩৪৫৬৭৮</p>
+            <p>📧 career@adivasidevelopment.org | 📞 +৮৮ ০১৭১২ ৩৪৫৬৭৮</p>
             <p>আদিবাসী উন্নয়ন - বাংলাদেশের আদিবাসী সম্প্রদায়কে ক্ষমতায়ন</p>
         </div>
     </footer>
