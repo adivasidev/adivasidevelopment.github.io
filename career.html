@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>নিয়োগ - আদিবাসী উন্নয়ন</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">আদিবাসী উন্নয়ন</div>
+            <ul class="nav-links">
+                <li><a href="index.html">হোম</a></li>
+                <li><a href="index.html#about">আমাদের সম্পর্কে</a></li>
+                <li><a href="index.html#programs">প্রোগ্রামসমূহ</a></li>
+                <li><a href="index.html#gallery">গ্যালারি</a></li>
+                <li><a href="index.html#contact">যোগাযোগ</a></li>
+                <li><a href="career.html" class="active">নিয়োগ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero career-hero">
+        <h1>চাকুরির আবেদন</h1>
+        <p>আদিবাসী উন্নয়ন সংস্থায় আপনার ক্যারিয়ার শুরু করুন</p>
+    </section>
+
+    <section class="section career-page">
+        <div class="career-container">
+            <div class="career-intro">
+                <h2>আবেদন ফর্ম</h2>
+                <p>নিচের ফর্মটি পূরণ করে আমাদের সাথে যুক্ত হোন</p>
+            </div>
+
+            <!-- Application Form -->
+            <div class="career-form-section">
+                <form id="careerForm" action="https://script.google.com/macros/s/AKfycbw0vdfyRf8yBrGfG52Qz4yB2gyObK1HoUB0J44uLnCx_aTqyxyibHv12YIM2AENpQVm-g/exec" method="POST">
+                    <div class="form-grid">
+                        <!-- নাম -->
+                        <div class="form-group">
+                            <label for="name">পুরো নাম *</label>
+                            <input type="text" id="name" name="name" placeholder="আপনার সম্পূর্ণ নাম" required>
+                        </div>
+                        
+                        <!-- ঠিকানা -->
+                        <div class="form-group">
+                            <label for="address">বর্তমান ঠিকানা *</label>
+                            <textarea id="address" name="address" rows="3" placeholder="আপনার সম্পূর্ণ ঠিকানা" required></textarea>
+                        </div>
+                        
+                        <!-- ইমেইল -->
+                        <div class="form-group">
+                            <label for="email">ইমেইল ঠিকানা *</label>
+                            <input type="email" id="email" name="email" placeholder="yourname@email.com" required>
+                        </div>
+                        
+                        <!-- ফোন নম্বর -->
+                        <div class="form-group">
+                            <label for="phone">ফোন নম্বর *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="01XXXXXXXXX" required>
+                        </div>
+                        
+                        <!-- শিক্ষাগত যোগ্যতা -->
+                        <div class="form-group">
+                            <label for="education">শিক্ষাগত যোগ্যতা *</label>
+                            <select id="education" name="education" required>
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="এসএসসি">এসএসসি</option>
+                                <option value="এইচএসসি">এইচএসসি</option>
+                                <option value="স্নাতক">স্নাতক</option>
+                                <option value="স্নাতকোত্তর">স্নাতকোত্তর</option>
+                                <option value="অন্যান্য">অন্যান্য</option>
+                            </select>
+                        </div>
+                        
+                        <!-- অভিজ্ঞতা -->
+                        <div class="form-group">
+                            <label for="experience">অভিজ্ঞতা *</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="ফ্রেশার">ফ্রেশার (কোন অভিজ্ঞতা নেই)</option>
+                                <option value="১ বছরের কম">১ বছরের কম</option>
+                                <option value="১-২ বছর">১-২ বছর</option>
+                                <option value="২-৫ বছর">২-৫ বছর</option>
+                                <option value="৫+ বছর">৫+ বছর</option>
+                            </select>
+                        </div>
+                        
+                        <!-- পদ -->
+                        <div class="form-group full-width">
+                            <label for="position">কোন পদের জন্য আবেদন করছেন? *</label>
+                            <select id="position" name="position" required>
+                                <option value="">পদ নির্বাচন করুন</option>
+                                <option value="এলাকা ইনচার্জ">এলাকা ইনচার্জ</option>
+                                <option value="ফিল্ড অফিসার">ফিল্ড অফিসার</option>
+                                <option value="প্রকল্প সমন্বয়কারী">প্রকল্প সমন্বয়কারী</option>
+                                <option value="শিক্ষা কর্মকর্তা">শিক্ষা কর্মকর্তা</option>
+                                <option value="স্বাস্থ্য কর্মী">স্বাস্থ্য কর্মী</option>
+                                <option value="অন্যান্য">অন্যান্য</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">আবেদন জমা দিন</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section">
+            <p>ইমেইল: career@adivasidevelopment.org | ফোন: +৮৮ ০১৭১২ ৩৪৫৬৭৮</p>
+            <p>আদিবাসী উন্নয়ন - বাংলাদেশের আদিবাসী সম্প্রদায়কে ক্ষমতায়ন</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
