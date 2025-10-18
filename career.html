@@ -357,7 +357,6 @@
                 <li><a href="index.html#programs">প্রোগ্রামসমূহ</a></li>
                 <li><a href="index.html#gallery">গ্যালারি</a></li>
                 <li><a href="index.html#contact">যোগাযোগ</a></li>
-                <li><a href="career.html" class="active">নিয়োগ</a></li>
             </ul>
         </nav>
     </header>
@@ -429,20 +428,18 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="experience">কাজের অভিজ্ঞতা <span class="required">*</span></label>
+                                <label for="experience">আপনার পূর্বের কোনো কাজের অভিজ্ঞতা আছে ? <span class="required">*</span></label>
                                 <select id="experience" name="experience" class="form-control" required>
                                     <option value="">নির্বাচন করুন</option>
-                                    <option value="ফ্রেশার">ফ্রেশার</option>
-                                    <option value="১ বছরের কম">১ বছরের কম</option>
-                                    <option value="১-২ বছর">১-২ বছর</option>
-                                    <option value="২-৫ বছর">২-৫ বছর</option>
-                                    <option value="৫+ বছর">৫+ বছর</option>
+                                    <option value="ফ্রেশার">আছে </option>
+                                    <option value="১ বছরের কম">নাই </option>
+                                
                                 </select>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="position">পদবী নির্বাচন <span class="required">*</span></label>
+                            <label for="position">আপনি কোন পদের জন্য আগ্রহী <span class="required">*</span></label>
                             <select id="position" name="position" class="form-control" required>
                                 <option value="">পদবী নির্বাচন করুন</option>
                                 <option value="এলাকা ইনচার্জ">এলাকা ইনচার্জ</option>
@@ -481,15 +478,14 @@
             document.getElementById('successMessage').style.display = 'block';
             
             // Optional: Reset the form
-            // this.reset();
+            this.reset();
             
             // Optional: Scroll to success message
             document.getElementById('successMessage').scrollIntoView({ 
                 behavior: 'smooth' 
             });
             
-            // Optional: Hide form after submission
-            // document.querySelector('.application-form').style.display = 'none';
+            console.log("Form submitted successfully without redirecting!");
         });
     </script>
 </body>
