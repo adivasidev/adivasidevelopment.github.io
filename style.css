@@ -205,7 +205,7 @@ header {
 
 .program-card {
     background: white;
-    padding: 3rem 2rem;
+    padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     text-align: center;
@@ -221,9 +221,20 @@ header {
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
+.program-image {
+    margin-bottom: 1.5rem;
+}
+
+.program-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 .program-card h3 {
     color: #2E7D32;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-size: 1.5rem;
     font-family: 'Kalpurush', 'SolaimanLipi', sans-serif;
     font-weight: bold;
@@ -233,6 +244,60 @@ header {
     color: #666;
     line-height: 1.7;
     text-align: center;
+}
+
+/* Gallery Section */
+.gallery-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.gallery-category h3 {
+    color: #2E7D32;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: 'Kalpurush', 'SolaimanLipi', sans-serif;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #FFD54F;
+    display: inline-block;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
 }
 
 /* Impact Section */
@@ -354,6 +419,14 @@ footer p {
         min-width: 100%;
         max-width: 100%;
     }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item img {
+        height: 200px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -376,24 +449,10 @@ footer p {
     .logo {
         font-size: 1.5rem;
     }
-}
-
-/* Bengali Text Specific Styles */
-.bengali-text {
-    font-family: 'SolaimanLipi', 'Kalpurush', sans-serif;
-    line-height: 1.8;
-}
-
-/* Loading Animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+    
+    .gallery-item img {
+        height: 180px;
+    }
 }
 
 /* Mobile Menu Toggle */
@@ -405,35 +464,6 @@ footer p {
     font-size: 1.5rem;
     cursor: pointer;
     padding: 0.5rem;
-}
-
-/* Button Styles */
-.btn {
-    font-family: 'SolaimanLipi', 'Kalpurush', sans-serif;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-primary {
-    background: #2E7D32;
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #1B5E20;
-}
-
-/* Card Hover Effects */
-.card-hover {
-    transition: all 0.3s ease;
-}
-
-.card-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* Text Selection Color */
