@@ -3,26 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আদিবাসী উন্নয়ন - বাংলাদেশের আদিবাসী সম্প্রদায়কে ক্ষমতায়ন</title>
-    <link rel="stylesheet" href="style.css">
+    <title>আদিবাসী উন্নয়ন - বাংলাদেশের আদিবাসী সমাজ</title>
     <style>
-        /* 🔹 Login Section CSS */
-        .login-section {
-            position: relative;
+        body {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+        }
+
+        header {
+            background: #006a4e;
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
             margin-left: 20px;
         }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .login-section {
+            position: relative;
+        }
+
         .login-btn {
-            background: #006a4e;
-            color: #fff;
+            background: white;
+            color: #006a4e;
             border: none;
-            padding: 8px 14px;
+            padding: 6px 14px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 14px;
+            font-weight: bold;
         }
+
         .login-btn:hover {
-            background: #008f65;
+            background: #e2f2eb;
         }
+
         .login-form {
             display: none;
             position: absolute;
@@ -35,6 +77,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             z-index: 10;
         }
+
         .login-form input {
             display: block;
             width: 180px;
@@ -43,6 +86,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         .login-form button {
             width: 100%;
             background: #006a4e;
@@ -52,151 +96,81 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         .login-form button:hover {
             background: #008f65;
+        }
+
+        main {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .data-link {
+            display: none;
+            margin-left: 20px;
+            background: white;
+            color: #006a4e;
+            padding: 6px 14px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .data-link:hover {
+            background: #e2f2eb;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <nav class="nav-container">
-            <div class="logo">আদিবাসী উন্নয়ন</div>
-            <ul class="nav-links">
+        <div class="logo">আদিবাসী উন্নয়ন</div>
+        <nav>
+            <ul>
                 <li><a href="#home">হোম</a></li>
                 <li><a href="career.html">নিয়োগ</a></li>
                 <li><a href="#contact">যোগাযোগ</a></li>
+                <li><a href="#" id="dataCollectLink" class="data-link">📊 ডেটা কালেক্ট</a></li>
             </ul>
-
-            <!-- 🔹 Login Section Added -->
-            <div class="login-section">
-                <button class="login-btn" onclick="toggleLogin()">🔒 লগইন</button>
-                <div class="login-form" id="loginForm">
-                    <input type="text" placeholder="ইউজারনেম" id="username">
-                    <input type="password" placeholder="পাসওয়ার্ড" id="password">
-                    <button onclick="login()">প্রবেশ করুন</button>
-                </div>
-            </div>
         </nav>
+        <div class="login-section">
+            <button class="login-btn" onclick="toggleLogin()">🔒 লগইন</button>
+            <div class="login-form" id="loginForm">
+                <input type="text" id="username" placeholder="ইউজারনেম">
+                <input type="password" id="password" placeholder="পাসওয়ার্ড">
+                <button onclick="login()">প্রবেশ করুন</button>
+            </div>
+        </div>
     </header>
 
-    <section class="hero" id="home">
-        <h1>বাংলাদেশের আদিবাসী সম্প্রদায়কে ক্ষমতায়ন</h1>
-        <p>ঐতিহ্য সংরক্ষণ, ভবিষ্যৎ গড়া। বাংলাদেশের আদিবাসী সম্প্রদায়ের জন্য টেকসই উন্নয়ন তৈরি করতে আমাদের সাথে যোগ দিন।</p>
-        <a href="#contact" class="cta-button">সহযোগিতা করুন</a>
-    </section>
-
-    <section class="section about" id="about">
-        <h2>আমাদের সম্পর্কে</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>বাংলাদেশের আদিবাসীদের জন্য কাজ</h3>
-                <p>আমরা বাংলাদেশের আদিবাসী সম্প্রদায়ের সামগ্রিক উন্নয়নের জন্য কাজ করি - চাকমা, মারমা, গারো, খাসি, সাঁওতাল, ত্রিপুরা, ওরাওঁ, মনিপুরীসহ সকল আদিবাসী গোষ্ঠীর সমৃদ্ধ সাংস্কৃতিক ঐতিহ্য এবং প্রথাগত জ্ঞান সংরক্ষণের সাথে সাথে।</p>
-                <p>আমাদের কার্যক্রম পার্বত্য চট্টগ্রাম, সিলেট, ময়মনসিংহ, রাজশাহী এবং বাংলাদেশের অন্যান্য অঞ্চলে বিস্তৃত। আমরা আদিবাসী শিশু-কিশোর, নারী ও যুবকদের শিক্ষা, স্বাস্থ্য এবং অর্থনৈতিক ক্ষমতায়নের জন্য কাজ করি।</p>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1593115057322-e94b77572f20?auto=format&fit=crop&w=1000&q=80" alt="বাংলাদেশের আদিবাসী সম্প্রদায়">
-            </div>
-        </div>
-    </section>
-
-    <section class="section history" id="history">
-        <h2>আমাদের ইতিহাস</h2>
-        <div class="history-content">
-            <div class="history-text">
-                <h3>২০০৫ সাল থেকে নিরলস কাজ</h3>
-                <p>আদিবাসী উন্নয়ন ২০০৫ সালে বাংলাদেশের পার্বত্য চট্টগ্রাম অঞ্চলে একটি ক্ষুদ্র উদ্যোগ হিসেবে শুরু হয়। সময়ের সাথে সাথে আমরা সম্প্রসারিত হয়ে সমগ্র বাংলাদেশের আদিবাসী সম্প্রদায়ের সাথে কাজ করছি।</p>
-                <div class="milestones">
-                    <div class="milestone">
-                        <span class="year">২০০৫</span>
-                        <span class="event">প্রতিষ্ঠা - রাঙ্গামাটি, পার্বত্য চট্টগ্রাম</span>
-                    </div>
-                    <div class="milestone">
-                        <span class="year">২০১০</span>
-                        <span class="event">সিলেট ও ময়মনসিংহ অঞ্চলে সম্প্রসারণ</span>
-                    </div>
-                    <div class="milestone">
-                        <span class="year">২০১৫</span>
-                        <span class="event">রাজশাহী ও দিনাজপুর অঞ্চলে কার্যক্রম</span>
-                    </div>
-                    <div class="milestone">
-                        <span class="year">২০২৩</span>
-                        <span class="event">১০০+ গ্রামে কার্যক্রম, ৫০০০+ জীবন প্রভাবিত</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section team" id="team">
-        <h2>আমাদের টিম</h2>
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="member-photo">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="সুজিত চাকমা">
-                </div>
-                <h3>সুজিত চাকমা</h3>
-                <p class="position">প্রতিষ্ঠাতা ও নির্বাহী পরিচালক</p>
-                <p class="bio">পার্বত্য চট্টগ্রাম থেকে, ১৫+ বছর আদিবাসী অধিকার কর্মী</p>
-            </div>
-            <div class="team-member">
-                <div class="member-photo">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=400&q=80" alt="মালাবিকা মারমা">
-                </div>
-                <h3>মালাবিকা মারমা</h3>
-                <p class="position">শিক্ষা ও সংস্কৃতি কর্মসূচি সমন্বয়কারী</p>
-                <p class="bio">বান্দরবান থেকে, মারমা ভাষা ও সংস্কৃতি বিশেষজ্ঞ</p>
-            </div>
-            <div class="team-member">
-                <div class="member-photo">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" alt="দিপেন্দ্র গারো">
-                </div>
-                <h3>দিপেন্দ্র গারো</h3>
-                <p class="position">স্বাস্থ্য ও জীবিকা কর্মসূচি ব্যবস্থাপক</p>
-                <p class="bio">ময়মনসিংহ থেকে, সম্প্রদায়ভিত্তিক উন্নয়ন বিশেষজ্ঞ</p>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="section">
-            <h3>যোগাযোগ করুন</h3>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h4>আমাদের ঠিকানা</h4>
-                    <p>📧 ইমেইল: contact@adivasidevelopment.org</p>
-                    <p>📞 ফোন: +৮৮ ০১৭১২ ৩৪৫৬৭৮</p>
-                    <p>📍 ঠিকানা: ১২/৩, লেক সার্কাস, কলাবাগান, ঢাকা-১২০৫</p>
-                    <div class="social-links">
-                        <h4>সামাজিক যোগাযোগ</h4>
-                        <div class="social-icons">
-                            <a href="#">📘 ফেসবুক</a>
-                            <a href="#">📷 ইন্সটাগ্রাম</a>
-                            <a href="#">🎥 ইউটিউব</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <main>
+        <h1>বাংলাদেশের আদিবাসী উন্নয়ন প্রকল্পে স্বাগতম</h1>
+        <p>এই ওয়েবসাইটের মাধ্যমে আদিবাসী জনগোষ্ঠীর উন্নয়ন, শিক্ষা, সংস্কৃতি ও অধিকার সম্পর্কিত তথ্য সংগ্রহ করা হবে।</p>
+        <p>আপনি লগইন না করলেও সব তথ্য দেখতে পারবেন, তবে লগইন করার পরে <strong>ডেটা কালেক্ট</strong> অপশন চালু হবে।</p>
+    </main>
 
     <script>
-        // 🔹 Login Section JS
         function toggleLogin() {
             const form = document.getElementById('loginForm');
             form.style.display = (form.style.display === 'block') ? 'none' : 'block';
         }
 
         function login() {
-            const user = document.getElementById('username').value;
-            const pass = document.getElementById('password').value;
+            const user = document.getElementById('username').value.trim();
+            const pass = document.getElementById('password').value.trim();
 
-            if (user === "admin" && pass === "1234") {
+            if (user === "MdEbadot" && pass === "MdEbadot@12") {
                 alert("লগইন সফল!");
-                window.location.href = "profile.html";
+                document.getElementById('dataCollectLink').style.display = "inline-block";
+                document.getElementById('loginForm').style.display = "none";
+                document.querySelector('.login-btn').innerText = "✅ লগইন হয়েছে";
+                document.querySelector('.login-btn').disabled = true;
             } else {
                 alert("ভুল ইউজারনেম বা পাসওয়ার্ড!");
             }
         }
     </script>
+
 </body>
 </html>
